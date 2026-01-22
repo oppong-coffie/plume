@@ -3,10 +3,12 @@ import {
   Home,
   Briefcase,
   Building,
-  Check,
   ArrowRight,
 } from "lucide-react";
 
+/**
+ * Packages page displaying available product suites.
+ */
 const products = [
   {
     id: "panorama",
@@ -83,12 +85,12 @@ const products = [
 
 const Packages = ({ setActivePage }) => {
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 animate-fade-in">
       <div>
-        <h2 className="text-2xl font-display font-bold text-primary dark:text-white mb-2">
+        <h2 className="text-2xl font-display font-bold text-red-500 dark:text-white mb-2">
           Product Suite
         </h2>
-        <p className="text-gray-500 dark:text-gray-400">
+        <p className="text-red-500/80 dark:text-gray-400">
           Manage your product offerings and pricing tiers.
         </p>
       </div>
@@ -102,7 +104,7 @@ const Packages = ({ setActivePage }) => {
           >
             {/* Background Gradient */}
             <div
-              className={`absolute top-0 right-0 p-32 opacity-5 bg-gradient-to-bl ${product.bg} to-transparent rounded-bl-full transition-opacity group-hover:opacity-10`}
+              className={`absolute top-0 right-0 p-32 opacity-5 bg-linear-to-bl ${product.bg} to-transparent rounded-bl-full transition-opacity group-hover:opacity-10`}
             />
 
             <div className="relative z-10 flex flex-col h-full">
@@ -113,16 +115,16 @@ const Packages = ({ setActivePage }) => {
                     product.color === "blue"
                       ? "text-neon-blue"
                       : product.color === "purple"
-                      ? "text-purple-400"
-                      : product.color === "orange"
-                      ? "text-orange-400"
-                      : "text-neon-green"
+                        ? "text-purple-400"
+                        : product.color === "orange"
+                          ? "text-orange-400"
+                          : "text-neon-green"
                   }`}
                 >
                   <product.icon className="w-6 h-6" />
                 </div>
                 <div className="text-right">
-                  <div className="text-xl font-bold text-primary dark:text-white">
+                  <div className="text-xl font-bold text-red-500 dark:text-white">
                     {product.price}
                   </div>
                   <div className="text-xs text-gray-500">{product.unit}</div>
@@ -130,23 +132,21 @@ const Packages = ({ setActivePage }) => {
               </div>
 
               {/* Content */}
-              <div className="mb-6 flex-grow">
-                <h3 className="text-lg font-display font-bold text-primary dark:text-white leading-tight">
+              <div className="mb-6 grow">
+                <h3 className="text-lg font-display font-bold text-red-500 dark:text-white leading-tight">
                   {product.name}
                 </h3>
                 <p className="text-xs text-neon-blue font-medium mb-2 uppercase tracking-wider">
                   {product.subtitle}
                 </p>
-                <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed mb-4">
+                <p className="text-sm text-red-500/60 dark:text-gray-400 leading-relaxed mb-4">
                   {product.description}
                 </p>
-
-                {/* Features removed from main card as requested */}
               </div>
 
               {/* CTA */}
               <div className="mt-auto pt-4 border-t border-border dark:border-white/5 flex items-center justify-between group-hover:border-primary/20 dark:group-hover:border-white/10 transition-colors">
-                <span className="text-xs font-medium text-gray-400 dark:text-white/50 group-hover:text-primary dark:group-hover:text-white transition-colors">
+                <span className="text-xs font-medium text-red-500/80 dark:text-white/50 group-hover:text-red-500 dark:group-hover:text-white transition-colors">
                   Manage Product
                 </span>
                 <ArrowRight className="w-4 h-4 text-gray-400 dark:text-white/50 group-hover:text-primary dark:group-hover:text-white group-hover:translate-x-1 transition-all" />

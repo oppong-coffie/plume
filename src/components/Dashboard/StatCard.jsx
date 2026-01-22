@@ -27,14 +27,14 @@ const StatCard = ({
   return (
     <div className="glass p-6 rounded-2xl relative overflow-hidden group hover-lift border border-border transition-all duration-300">
       <div
-        className={`absolute top-0 right-0 p-3 opacity-10 group-hover:opacity-20 transition-opacity bg-gradient-to-br ${gradients[color]} rounded-bl-2xl`}
+        className={`absolute top-0 right-0 p-3 opacity-10 group-hover:opacity-70 transition-opacity bg-gradient-to-br ${gradients[color]} rounded-bl-2xl`}
       />
 
-      <div className="flex justify-between items-start mb-4">
+      <div className="flex justify-between items-start">
         <div
           className={`p-3 rounded-xl bg-surface border border-white/5 ${textColors[color]}`}
         >
-          <Icon className="w-6 h-6" />
+          <Icon className="w-8 h-8" />
         </div>
         <div
           className={`flex items-center gap-1 text-sm font-medium ${
@@ -42,19 +42,19 @@ const StatCard = ({
           } bg-surface/50 px-2 py-1 rounded-lg`}
         >
           {isUp ? (
-            <ArrowUpRight className="w-4 h-4" />
+            <ArrowUpRight className="w-4 h-4 text-green-500" />
           ) : (
-            <ArrowDownRight className="w-4 h-4" />
+            <ArrowDownRight className="w-4 h-4 text-red-400" />
           )}
-          <span>{change}</span>
+          <span className="text-stone-400">{change}</span>
         </div>
       </div>
 
       <div>
-        <p className="text-gray-500 dark:text-gray-400 text-sm font-medium mb-1">
+        <p className="text-red-500 dark:text-white text-sm font-medium mb-1">
           {title}
         </p>
-        <h3 className="text-3xl font-display font-bold text-primary dark:text-white tracking-tight">
+        <h3 className="text-3xl font-display font-bold text-red-500 dark:text-white tracking-tight">
           {value}
         </h3>
       </div>

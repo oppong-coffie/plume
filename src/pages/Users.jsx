@@ -70,7 +70,7 @@ const UsersPage = () => {
     <div className="space-y-8 animate-fade-in">
       {/* Header & Feature Metrics */}
       <div>
-        <h2 className="text-3xl font-display font-bold text-white mb-6">
+        <h2 className="text-3xl font-display font-bold text-red-500 dark:text-white mb-6">
           User Management
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -114,8 +114,10 @@ const UsersPage = () => {
         {/* Toolbar */}
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
           <div className="flex items-center gap-3">
-            <h3 className="text-xl font-bold text-white">Subscribers List</h3>
-            <span className="px-2 py-0.5 rounded-full bg-white/10 text-xs text-gray-400 border border-white/5">
+            <h3 className="text-xl font-bold text-red-500 dark:text-white">
+              Subscribers List
+            </h3>
+            <span className="px-2 py-0.5 rounded-full bg-white/10 text-xs text-red-500/60 dark:text-gray-400 border border-white/5">
               All Regions
             </span>
           </div>
@@ -172,10 +174,10 @@ const UsersPage = () => {
                         {user.name.charAt(0)}
                       </div>
                       <div>
-                        <div className="text-sm font-bold text-primary dark:text-white">
+                        <div className="text-sm font-bold text-red-500 dark:text-white">
                           {user.name}
                         </div>
-                        <div className="text-xs text-gray-500">
+                        <div className="text-xs text-red-500/60 dark:text-gray-500">
                           ID: #{1000 + user.id}
                         </div>
                       </div>
@@ -183,8 +185,10 @@ const UsersPage = () => {
                   </td>
                   <td className="px-6 py-4">
                     <div>
-                      <div className="text-sm text-gray-300">{user.plan}</div>
-                      <div className="text-xs text-gray-500 flex items-center gap-1">
+                      <div className="text-sm text-red-500/80 dark:text-gray-300">
+                        {user.plan}
+                      </div>
+                      <div className="text-xs text-red-500/60 dark:text-gray-500 flex items-center gap-1">
                         <Activity className="w-3 h-3" /> {user.bandwidth}
                       </div>
                     </div>
@@ -197,8 +201,8 @@ const UsersPage = () => {
                             user.qoe > 90
                               ? "bg-white text-white"
                               : user.qoe > 70
-                              ? "bg-red-400 text-red-400"
-                              : "bg-red-600 text-red-600"
+                                ? "bg-red-400 text-red-400"
+                                : "bg-red-600 text-red-600"
                           }`}
                           style={{ width: `${user.qoe}%` }}
                         />
@@ -208,8 +212,8 @@ const UsersPage = () => {
                           user.qoe > 90
                             ? "text-white"
                             : user.qoe > 70
-                            ? "text-red-400"
-                            : "text-red-600"
+                              ? "text-red-400"
+                              : "text-red-600"
                         }`}
                       >
                         {user.qoe}
@@ -240,7 +244,7 @@ const UsersPage = () => {
                         className={`text-sm ${
                           user.signal === "Weak"
                             ? "text-red-600"
-                            : "text-gray-300"
+                            : "text-red-500/80 dark:text-gray-300"
                         }`}
                       >
                         {user.signal}
